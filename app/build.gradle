@@ -1,0 +1,156 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+//    id 'com.google.gms.google-services'
+//    id 'com.google.firebase.crashlytics'
+}
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.seekersgroup"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "androidx.activity:activity-ktx:1.2.1"
+    implementation "androidx.fragment:fragment-ktx:1.3.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.appcompat:appcompat:$app_compat"
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.viewModelVersion"
+    //dagger-hilt
+    implementation 'com.google.dagger:hilt-android:' + rootProject.hiltVersion
+    kapt 'com.google.dagger:hilt-android-compiler:' + rootProject.hiltVersion
+    // For instrumentation tests
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:' + rootProject.hiltVersion
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:' + rootProject.hiltVersion
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:' + rootProject.hiltVersion
+    kaptTest 'com.google.dagger:hilt-android-compiler:' + rootProject.hiltVersion
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:$rootProject.assistedInjectVersion"
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:$rootProject.assistedInjectVersion"
+
+    //retrofit
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpLoggingVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+
+    //Logging
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    //Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+    // Retrofit Coroutines Support
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+    // Retrofit with Moshi Converter
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+
+    // Testing dependencies
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    androidTestImplementation "androidx.test:core-ktx:$rootProject.coreKTXVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$rootProject.jUnitKTXVersion"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:$rootProject.uiAutomatorVersion"
+    androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
+    androidTestImplementation "com.google.truth:truth:$rootProject.truthVersion"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
+    testImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    testImplementation "com.google.truth:truth:$rootProject.googleTruth"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.kotlinTestVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.kotlinTestVersion"
+    androidTestImplementation "io.mockk:mockk-android:$rootProject.mockkVersion"
+    testImplementation "io.mockk:mockk:$rootProject.mockkVersion"
+    debugImplementation "androidx.fragment:fragment-testing:$rootProject.fragment_version"
+    testImplementation "org.robolectric:robolectric:4.3.1"
+
+    // Testing dependency Mockito
+    // required if you want to use Mockito for unit tests
+    testImplementation "org.mockito:mockito-core:$MockitoVersion"
+    androidTestImplementation "org.mockito:mockito-android:$MockitoVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$Mockito_Kotlin"
+
+    //base dialog
+    implementation 'com.github.PREric:BasePopup:2.2.10'
+
+    //navigation
+    // Navigation
+    implementation "androidx.navigation:navigation-runtime-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    androidTestImplementation "androidx.navigation:navigation-testing:$navigationVersion"
+
+    //Glide load img
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    //RecyclerView Selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+
+    //shimmer
+//    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //crashlytics
+    // Import the BoM for the Firebase platform
+//    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+//    implementation 'com.google.firebase:firebase-crashlytics-ktx:17.3.1'
+//    implementation 'com.google.firebase:firebase-analytics-ktx:18.0.2'
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+}

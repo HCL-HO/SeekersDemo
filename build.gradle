@@ -1,0 +1,96 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        ktx_version = "1.3.2"
+        app_compat = "1.2.0"
+        // Sdk and tools
+        compileSdkVersion = 30
+        minSdkVersion = 21
+        targetSdkVersion = 30
+
+        // App dependencies
+        room_version = "2.2.6"
+        zxingVersion = "4.1.0"
+        playVisionVersion = "20.1.3"
+        coreKTXVersion = "1.3.0"
+        jUnitKTXVersion = "1.1.2"
+        kotlinTestVersion = "1.2.1"
+        viewModelVersion = "2.2.0"
+        googleTruth = "1.0.1"
+        timberVersion = "4.7.1"
+        version_retrofit_coroutines_adapter = "0.9.2"
+        version_moshi = "1.9.3"
+        MockitoVersion = "2.25.0"
+        Mockito_Kotlin = "2.2.0"
+        appCompatVersion = '1.1.0'
+        assistedInjectVersion = '0.5.2'
+        constraintLayoutVersion = '2.0.4'
+        coreTestingVersion = '2.1.0'
+        coroutinesVersion = "1.4.2"
+        espressoVersion = '3.3.0'
+        fragmentVersion = '1.1.0-alpha09'
+        glideVersion = '4.10.0'
+        gradleVersion = '4.1.1'
+        gsonVersion = '2.8.6'
+        hiltVersion = '2.28.3-alpha'
+        hiltViewModelVersion = '1.0.0-alpha02'
+        junitVersion = '4.12'
+        kotlinVersion = '1.4.21'
+        ktlintVersion = '0.38.1'
+        ktxVersion = '1.0.2'
+        lifecycleVersion = '2.2.0'
+        materialVersion = '1.2.0'
+        okhttpLoggingVersion = '4.7.2'
+        pagingVersion = '3.0.0-alpha02'
+        recyclerViewVersion = '1.2.0-alpha04'
+        retrofitVersion = '2.9.0'
+        roomVersion = '2.2.5'
+        runnerVersion = '1.0.1'
+        truthVersion = '1.0.1'
+        testExtJunit = '1.1.0'
+        uiAutomatorVersion = '2.2.0'
+        viewPagerVersion = '1.0.0'
+        workVersion = '2.5.0'
+        navigationVersion = '2.3.4'
+        fragment_version = '1.3.1'
+        mockkVersion = "1.10.6"
+    }
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+    }
+    dependencies {
+        // ...
+
+        // Check that you have the Google Services Gradle plugin v4.3.2 or later
+        // (if not, add it).
+        classpath 'com.google.gms:google-services:4.3.5'
+
+        // Add the Crashlytics Gradle plugin (be sure to add version
+        // 2.0.0 or later if you built your app with Android Studio 4.1).
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.5.0'
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
