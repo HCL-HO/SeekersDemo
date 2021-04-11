@@ -46,16 +46,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/card"
-            android:padding="8dp">
+            android:paddingHorizontal="8dp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView"
                 style="@style/label_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/lb_equity"
+                android:layout_marginTop="8dp"
                 android:autoSizeTextType="uniform"
                 android:maxLines="1"
+                android:text="@string/lb_equity"
                 app:layout_constraintEnd_toStartOf="@+id/txt_equity"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +67,7 @@
                 android:layout_width="1dp"
                 android:layout_height="0dp"
                 android:background="@color/label1"
+                app:layout_constraintHorizontal_bias="0.55"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +78,9 @@
                 style="@style/label_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginVertical="8dp"
                 android:text="@string/lb_balance"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txt_balance"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +96,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/appCompatTextView8"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/view"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextView"
                 app:layout_goneMarginStart="8dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -102,6 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/lb_used"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView5"
                 app:layout_constraintEnd_toStartOf="@+id/appCompatTextView7"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txt_balance"
@@ -113,65 +117,65 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
-                android:gravity="start"
-                android:textColor="@color/white"
-                android:textSize="16sp"
+                android:autoSizeMaxTextSize="16dp"
                 android:autoSizeTextType="uniform"
-                android:maxLines="1"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
                 app:layout_constraintEnd_toStartOf="@+id/view"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView"
-                tools:text="$100000"
-                android:text="-"/>
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_balance"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
-                android:gravity="start"
-                android:textColor="@color/white"
-                android:textSize="16sp"
+                android:autoSizeMaxTextSize="16dp"
                 android:autoSizeTextType="uniform"
-                android:maxLines="1"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView5"
                 app:layout_constraintEnd_toStartOf="@+id/view"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/appCompatTextView5"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView5"
-                tools:text="$100000"
-                android:text="-"/>
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextView5" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="16sp"
                 android:autoSizeTextType="uniform"
                 android:maxLines="1"
+                android:text="$100000"
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/appCompatTextView6"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView6"
-                android:text="$100000" />
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextView6" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/appCompatTextView8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:text="$100000"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/appCompatTextView4"
-                app:layout_constraintTop_toTopOf="@+id/appCompatTextView4"
-                android:text="$100000" />
+                app:layout_constraintTop_toTopOf="@+id/appCompatTextView4" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -194,14 +198,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backgroundTint="@color/card"
+        app:itemIconTint="@color/label1"
+        app:itemTextColor="@color/bottomview_selectable_color"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemTextColor="@color/bottomview_selectable_color"
-        app:itemIconTint="@color/label1"
-        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,13 +13,13 @@ class NumberUtilTest {
     fun toRandomBuyPrice() {
         val origin = 10.0
         val new = origin.toRandomBuyPrice()
-        Truth.assertThat(new).isGreaterThan(origin.toBigDecimal())
+        Truth.assertThat(new).isAtLeast(origin.toBigDecimal())
     }
 
     @Test
     fun toRandomSellPrice() {
         val origin = 10.0
         val new = origin.toRandomSellPrice()
-        Truth.assertThat(new).isLessThan(origin.toBigDecimal())
+        Truth.assertThat(new).isAtMost(origin.toBigDecimal())
     }
 }

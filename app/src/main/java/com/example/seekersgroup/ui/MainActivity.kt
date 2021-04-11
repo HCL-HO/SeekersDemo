@@ -2,6 +2,7 @@ package com.example.seekersgroup.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.seekersgroup.MainViewModel
 import com.example.seekersgroup.R
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         }
         viewmodel.equityState.observe(this) { e ->
             txt_equity.text = e.toDouble().toDisplayFormat()
+        }
+        viewmodel.error.observe(this) { e ->
+            e.getContentIfNotHandled()?.let {
+                Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 

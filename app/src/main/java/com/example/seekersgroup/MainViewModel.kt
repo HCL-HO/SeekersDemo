@@ -21,10 +21,10 @@ import java.math.BigDecimal
 class MainViewModel : ViewModel() {
     companion object {
         const val KEY_RATE = "rate"
+        const val MIN_POLLING_INTERVAL: Long = 5000
     }
 
-    // TODO use string.xml
-    private val UNEXPECTED: String ="Unexpected Error"
+    private val UNEXPECTED: String = "Unexpected Error"
     private var isPolling: Boolean = false
     private val _error = MutableLiveData<Event<String>>()
     private val __forexRateList = MutableLiveData<JSONObject>()
@@ -102,9 +102,9 @@ class MainViewModel : ViewModel() {
      *  polling from API to update constantly
      *  Minimum interval set to 5000 milisec
      */
-    fun pollForexData(interval: Long = 5000) {
+    fun pollForexData(interval: Long = MIN_POLLING_INTERVAL) {
         isPolling = true
-        val delay = if (interval < 5000) 5000 else interval
+        val delay = if (interval < MIN_POLLING_INTERVAL) MIN_POLLING_INTERVAL else interval
         viewModelScope.launch {
             while (isPolling) {
                 delay(delay)
