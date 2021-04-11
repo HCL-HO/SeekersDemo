@@ -1,5 +1,9 @@
 ## Specific requirements:
 
+#### API : https://www.freeforexapi.com/Home/Api)
+
+<img src="https://github.com/HCL-HO/SeekersDemo/blob/main/seekergroup.gif" width="216" height="444" />
+
 • Use Kotlin. 
 • Use MVVM. 
 • The app should available on both landscape and portrait mode  
