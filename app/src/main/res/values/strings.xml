@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">SeekersGroup</string>
+    <string name="app_name">SeekersCapital</string>
+    <string name="lb_equity">Equity</string>
+    <string name="lb_balance">Balance</string>
+    <string name="lb_margin">Margin</string>
+    <string name="lb_used">Used</string>
+    <string name="lb_symbol">Symbol</string>
+    <string name="lb_change">Change</string>
+    <string name="lb_sell">Sell</string>
+    <string name="lb_buy">Buy</string>
+    <string name="lb_market">Markets</string>
+    <string name="lb_portfolio">Porfolio</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="label_1">
+        <item name="android:textColor">@color/label1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="bottomview_active_text" >
+        <item name="android:textColor">@color/label1</item>
+    </style>
+
+    <color name="label1">#849BF3</color>
+
+</resources>

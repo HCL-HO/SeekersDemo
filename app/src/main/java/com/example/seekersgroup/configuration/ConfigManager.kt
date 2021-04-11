@@ -14,7 +14,7 @@ object ConfigManager {
     }
 
     fun getForexURL(): String {
-        return "https://www.freeforexapi.com/api/live"
+        return "https://www.freeforexapi.com/api/"
     }
 
 }
